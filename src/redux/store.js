@@ -13,4 +13,4 @@ export const store = createStore(
     composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 
-sagaMiddleware.run(middleware)
+sagaMiddleware.run(middleware);

@@ -12,8 +12,5 @@ const ReduxApp = () => {
   );
 };
 
-
-
-
 ReactDom.render(<ReduxApp />, document.getElementById("root"));
 
