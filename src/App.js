@@ -2,6 +2,7 @@ import React from "react";
 import { Container, makeStyles } from "@material-ui/core";
 import { Box, AppBar, Toolbar, IconButton, Typography, Paper } from "@material-ui/core";
 import TodoAdder from "./components/todo-adder";
+import TodosContainer from "./components/todos-container";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -10,8 +11,8 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: 100, 
     paddingRight: 100,
     marginTop: 100, 
-    backgroundColor: "blue", 
   }, 
+
   wrapper: {
     textAlign: "center", 
     width: "100%", 
@@ -46,6 +47,7 @@ export default function E2LTodos() {
 
 
         {/* The container area to display all todos - "TodosContainer" */}
+        <TodosContainer />
 
 
       </Paper>
