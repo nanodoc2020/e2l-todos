@@ -33,6 +33,11 @@ export default function TodosContainer() {
                     <Divider />
                     <List>
                         {todos.map((todo) => {
+                            if (!todo.completed) {
+                                return <TodoItem {...todo} />;
+                            } else {
+                                return null;
+                            }
                             return <TodoItem {...todo} />;
                         })}
                     </List>
@@ -42,6 +47,16 @@ export default function TodosContainer() {
                         Completed
                     </Typography>
                     <Divider />
+                    <List>
+                        {todos.map((todo) => {
+                            if (todo.completed) {
+                                return <TodoItem {...todo} />;
+                            } else {
+                                return null;
+                            }
+                            return <TodoItem {...todo} />;
+                        })}
+                    </List>
                 </Grid>                
             </Grid>
         </Box>

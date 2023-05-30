@@ -7,14 +7,20 @@ import {ADD_TODO} from "../redux/actions";
 
 export default function TodoAdder() {
     const [title, setTitle] = useState(null);
+    const dispatch = useDispatch();
 
     function handleTextChange(e) {
         setTitle(e.target.value);
     }
 
-    function addtodoItem(params) {
-        // Todo: We need to dispatch the ADD_TODO reduc action here
-        // We will com back here once the todo items are listed
+    function addTodoItem(params) {
+        dispatch({
+            type: ADD_TODO, 
+            payload: {
+                title, 
+            }, 
+        });
+        setTitle(null)
     }
 
     return (
@@ -25,7 +31,7 @@ export default function TodoAdder() {
             </TextField>
             <Button style={{
                 height: 55,
-            }} variant="contained" color="primary" onClick={addtodoItem}>
+            }} variant="contained" color="primary" onClick={addTodoItem}>
                 Add
             </Button>
         </Box>

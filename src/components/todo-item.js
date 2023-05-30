@@ -5,12 +5,17 @@ import { FormControlLabel, FormGroup, ListItem } from '@material-ui/core';
 
 
 export default function TodoItem({ id, title, completed, important }) {
+
+    function toggleCheckBox(params) {
+        // Need to dispatch toggle action
+    }
+
     return (<ListItem dense>
         <FormGroup>
             <FormControlLabel control={
                 <Checkbox 
                 checked={completed} 
-                // onChange={handleChange}
+                onChange={toggleCheckBox}
                 id={title} 
                 color="primary" 
                 />
