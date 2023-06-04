@@ -23,6 +23,22 @@ export default function TodosContainer() {
         };
     });
 
+    const prioritizedTodos = (function prioritize(){
+
+        const importantTodos = [];
+        const notImportantTodos = [];
+
+        todos.forEach(todo => {
+            if (todo.important){
+                importantTodos.push(todo);
+            } else {
+                notImportantTodos.push(todo)
+            }
+        });
+        return importantTodos.concat(notImportantTodos);
+
+    })();
+
     return (
         <Box className={classes.root}>
             <Grid container spacing={2}>
@@ -32,13 +48,12 @@ export default function TodosContainer() {
                     </Typography>
                     <Divider />
                     <List>
-                        {todos.map((todo) => {
+                        {prioritizedTodos.map((todo) => {
                             if (!todo.completed) {
                                 return <TodoItem {...todo} />;
                             } else {
                                 return null;
                             }
-                            return <TodoItem {...todo} />;
                         })}
                     </List>
                 </Grid>
@@ -48,13 +63,12 @@ export default function TodosContainer() {
                     </Typography>
                     <Divider />
                     <List>
-                        {todos.map((todo) => {
+                        {prioritizedTodos.map((todo) => {
                             if (todo.completed) {
                                 return <TodoItem {...todo} />;
                             } else {
                                 return null;
                             }
-                            return <TodoItem {...todo} />;
                         })}
                     </List>
                 </Grid>                

@@ -14,6 +14,8 @@ export default function TodoAdder() {
     }
 
     function addTodoItem(params) {
+        // Need to dispatch the ADD_TODO reduc action here
+        // Do after todo items are listed
         dispatch({
             type: ADD_TODO, 
             payload: {
@@ -27,11 +29,15 @@ export default function TodoAdder() {
         <Box>
             <TextField style={{
                     width: 400,
-                }} label="Add new todo" variant="filled" onChange={handleTextChange}>
+                }} label="Add new todo" 
+                   variant="filled" 
+                   onChange={handleTextChange}>
             </TextField>
             <Button style={{
                 height: 55,
-            }} variant="contained" color="primary" onClick={addTodoItem}>
+            }} variant="contained" 
+               color="primary" 
+               onClick={addTodoItem}>
                 Add
             </Button>
         </Box>

@@ -23,6 +23,12 @@ export const initialState = {
         title: "pay bills", 
         completed: true, 
         important: true,
+      }, 
+      {
+        id: 4, 
+        title: "workout", 
+        completed: true, 
+        important: true,
       }
     ],
 };
