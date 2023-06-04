@@ -3,7 +3,10 @@ import { ADD_TODO, DELETE_TODO, TOGGLE_COMPLETED, TOGGLE_IMPORTANT } from "./act
 
 import shortid from "shortid";
 
-console.log(initialState);
+function saveStateToBrowser(state) {
+    window.localStorage.setItem("e2l-todos", JSON.stringify(state));
+}
+
 function reducer(state = initialState, action) {
     switch(action.type) {
         case ADD_TODO: {
@@ -21,6 +24,9 @@ function reducer(state = initialState, action) {
                     },
                 ],
             };
+
+            saveStateToBrowser(newState);
+
             return newState;
         }
         case TOGGLE_COMPLETED: {
@@ -35,6 +41,7 @@ function reducer(state = initialState, action) {
                 ...state, 
                 todos: newTodos,
             };
+            saveStateToBrowser(newState);
             return newState;
         }
 
@@ -52,6 +59,7 @@ function reducer(state = initialState, action) {
                 ...state, 
                 todos: newTodos,
             };
+            saveStateToBrowser(newState);
             return newState;
         }
 
@@ -63,6 +71,7 @@ function reducer(state = initialState, action) {
                 ...state, 
                 todos: newTodos,
             };
+            saveStateToBrowser(newState);
             return newState;
         }
 

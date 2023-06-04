@@ -1,4 +1,4 @@
-export const initialState = {
+export const initialState = JSON.parse(window.localStorage.getItem("e2l-todos")) || {
     todos: [
       {
         id: 0, 
