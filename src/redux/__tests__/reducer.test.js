@@ -31,5 +31,7 @@ describe("Reducer", () => {
         const newState = reducer(initialState, action);
 
         expect(newState.todos[0].title).toEqual("Read a book");
+        expect(newState.todos[0].completed).toBeFalsy();
+        expect(newState.todos[0].important).toBeFalsy();
     });
 });
